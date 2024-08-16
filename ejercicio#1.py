@@ -46,6 +46,7 @@ while True:
     print("1. Agregar perro")
     print("2. Mostrar perros")
     print("3. Salir")
+    print("------------------------------")
     opcion = input("Ingrese una opción: ")
 
     if opcion == "1":

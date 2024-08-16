@@ -57,6 +57,7 @@ while True:
     print("3. Agregar portátil")
     print("4. Mostrar dispositivos")
     print("5. Salir")
+    print("...................................")
     opcion = input("Ingrese una opción: ")
 
     if opcion == "1":

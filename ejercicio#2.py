@@ -54,6 +54,7 @@ while True:
     print("2. Agregar lápiz")
     print("3. Mostrar artículos")
     print("4. Salir")
+    print("__________________________________")
     opcion = input("Ingrese una opción: ")
 
     if opcion == "1":

@@ -52,6 +52,7 @@ while True:
     print("2. Agregar auto importado")
     print("3. Mostrar autos")
     print("4. Salir")
+    print("********************************")
     opcion = input("Ingrese una opción: ")
 
     if opcion == "1":
