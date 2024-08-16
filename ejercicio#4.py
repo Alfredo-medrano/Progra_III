@@ -1,18 +1,22 @@
+# Clase base para dispositivos electrónicos
 class DispositivoElectronico:
+    # Constructor para inicializar un dispositivo electrónico
     def __init__(self, tipo, pantalla, memoria, procesador, camara, precio_compra):
-        self.__tipo = tipo
-        self.__pantalla = pantalla
-        self.__memoria = memoria
-        self.__procesador = procesador
-        self.__camara = camara
-        self.__precio_compra = precio_compra
-        self.__precio_venta = self.__calcular_precio_venta()
-        self.__marca = "PHR"
-        self.__importado = True
+        self.__tipo = tipo                # Tipo del dispositivo
+        self.__pantalla = pantalla        # Tamaño de pantalla
+        self.__memoria = memoria          # Memoria
+        self.__procesador = procesador    # Procesador
+        self.__camara = camara            # Cámara
+        self.__precio_compra = precio_compra  # Precio de compra
+        self.__precio_venta = self.__calcular_precio_venta()  # Precio de venta con margen
+        self.__marca = "PHR"              # Marca fija
+        self.__importado = True          # Indica si es importado
 
+    # Calcula el precio de venta
     def __calcular_precio_venta(self):
         return self.__precio_compra * 1.7
 
+    # Devuelve la información del dispositivo
     def get_info(self):
         return {
             "Tipo": self.__tipo,
@@ -26,31 +30,39 @@ class DispositivoElectronico:
             "Importado": self.__importado
         }
 
+# Subclase para celulares
 class Celular(DispositivoElectronico):
     def __init__(self, pantalla, memoria, procesador, camara, precio_compra):
         super().__init__("Celular", pantalla, memoria, procesador, camara, precio_compra)
 
+# Subclase para tablets
 class Tablet(DispositivoElectronico):
     def __init__(self, pantalla, memoria, procesador, camara, precio_compra):
         super().__init__("Tablet", pantalla, memoria, procesador, camara, precio_compra)
 
+# Subclase para portátiles
 class Portatil(DispositivoElectronico):
     def __init__(self, pantalla, memoria, procesador, camara, precio_compra):
         super().__init__("Portátil", pantalla, memoria, procesador, camara, precio_compra)
 
+# Clase para gestionar un almacén de dispositivos
 class Almacen:
     def __init__(self):
-        self.__dispositivos = []
+        self.__dispositivos = []  # Lista de dispositivos
 
+    # Agrega un dispositivo al almacén
     def agregar_dispositivo(self, dispositivo):
         self.__dispositivos.append(dispositivo)
 
+    # Muestra la información de todos los dispositivos
     def mostrar_dispositivos(self):
         for dispositivo in self.__dispositivos:
             print(dispositivo.get_info())
 
+# Crear instancia del almacén
 almacen = Almacen()
 
+# Menú de opciones para el usuario
 while True:
     print("1. Agregar celular")
     print("2. Agregar tablet")
@@ -90,6 +102,3 @@ while True:
         break
     else:
         print("Opción inválida")
-
-if __name__ == "dispositivoelectronico":
-    DispositivoElectronico()
