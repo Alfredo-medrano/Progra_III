@@ -110,7 +110,7 @@ def main():
             if producto.nombre in nombres_productos:
                 supermercado.agregar_producto_a_seccion(nombre_seccion, producto)
 
-    # Diccionario de funciones que simula un switch-case para manejar las opciones del menú.
+    # Diccionario de funciones para manejar las opciones del menú.
     opciones_menu = {
         '1': lambda: agregar_producto(supermercado, secciones),
         '2': supermercado.mostrar_lista_compras,
@@ -131,7 +131,7 @@ def main():
         opcion = input("Selecciona una opción: ")
         print("=" * 50)
 
-        # Simulación de switch usando un diccionario de funciones
+        #diccionario de funciones
         accion = opciones_menu.get(opcion, lambda: print("Opción no válida. Inténtalo de nuevo."))
         accion()
 
